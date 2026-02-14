@@ -1,6 +1,6 @@
 # simple-code-graph-viewer
 
-Simple library that creates an interactive force-directed graph visualization for dependencies between classes combined with general code metrics. Embeddable in your own application. Based on D3.js. 
+Simple library that creates an interactive force-directed graph visualization for dependencies between classes combined with general code metrics. Embeddable in your own application. Based on D3.js. I'm using it exclusively with [gdscript-code-graph](https://github.com/MikeRoetgers/gdscript-code-graph). Should be straightforward to replicate for other languages.
 
 ![graph screenshot](docs/nodes-and-edges.png)
 
