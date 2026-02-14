@@ -1,7 +1,12 @@
 {
   "name": "simple-code-graph-viewer",
   "version": "1.0.0",
-  "description": "Interactive D3.js graph viewer for code metrics JSON",
+  "description": "Simple library that creates an interactive force-directed graph visualization for dependencies between classes combined with general code metrics. Embeddable in your own application. Based on D3.js.",
+  "homepage": "https://github.com/MikeRoetgers/simple-code-graph-viewer",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MikeRoetgers/simple-code-graph-viewer.git"
+  },
   "type": "module",
   "main": "./dist/simple-code-graph-viewer.cjs",
   "module": "./dist/simple-code-graph-viewer.js",
