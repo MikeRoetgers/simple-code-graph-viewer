@@ -1,0 +1,28 @@
+.mv-node circle {
+  cursor: pointer;
+  stroke: #fff;
+  stroke-width: 1.5px;
+}
+
+.mv-node text {
+  font-size: 10px;
+  pointer-events: none;
+  text-anchor: middle;
+  fill: #333;
+}
+
+.mv-link {
+  stroke-opacity: 0.6;
+}
+
+.mv-dimmed {
+  opacity: 0.1;
+}
+
+.mv-highlighted {
+  opacity: 1;
+}
+
+.mv-highlighted circle {
+  stroke-width: 2.5px;
+}

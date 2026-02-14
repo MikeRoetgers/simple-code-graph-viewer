@@ -1,0 +1,71 @@
+{
+  "name": "simple-code-graph-viewer",
+  "version": "1.0.0",
+  "description": "Interactive D3.js graph viewer for code metrics JSON",
+  "type": "module",
+  "main": "./dist/simple-code-graph-viewer.cjs",
+  "module": "./dist/simple-code-graph-viewer.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/simple-code-graph-viewer.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/simple-code-graph-viewer.cjs"
+      }
+    },
+    "./style.css": "./dist/style.css"
+  },
+  "bin": {
+    "simple-code-graph-viewer": "./bin/simple-code-graph-viewer.mjs"
+  },
+  "files": [
+    "dist",
+    "bin"
+  ],
+  "scripts": {
+    "dev": "vite --config vite.standalone.config.ts",
+    "build": "vite build && vite build --config vite.standalone.config.ts",
+    "build:lib": "vite build",
+    "build:standalone": "vite build --config vite.standalone.config.ts",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "prepublishOnly": "npm run build"
+  },
+  "dependencies": {
+    "d3-drag": "^3.0.0",
+    "d3-force": "^3.0.0",
+    "d3-scale": "^4.0.0",
+    "d3-scale-chromatic": "^3.0.0",
+    "d3-selection": "^3.0.0",
+    "d3-zoom": "^3.0.0",
+    "open": "^11.0.0",
+    "sirv": "^3.0.0"
+  },
+  "devDependencies": {
+    "@types/d3-drag": "^3.0.0",
+    "@types/d3-force": "^3.0.0",
+    "@types/d3-scale": "^4.0.0",
+    "@types/d3-scale-chromatic": "^3.0.0",
+    "@types/d3-selection": "^3.0.0",
+    "@types/d3-zoom": "^3.0.0",
+    "@vitest/coverage-v8": "^4.0.18",
+    "jsdom": "^28.0.0",
+    "typescript": "^5.4.0",
+    "vite": "^7.0.0",
+    "vite-plugin-dts": "^4.0.0",
+    "vitest": "^4.0.0"
+  },
+  "keywords": [
+    "d3",
+    "graph",
+    "visualization",
+    "code-metrics",
+    "force-directed"
+  ],
+  "license": "MIT"
+}

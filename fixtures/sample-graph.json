@@ -1,0 +1,214 @@
+{
+  "schema_version": "1.0",
+  "meta": {
+    "repo": "my-game",
+    "generated_at": "2026-02-13T10:00:00Z"
+  },
+  "nodes": [
+    {
+      "id": "res://src/main.gd",
+      "kind": "script",
+      "language": "gdscript",
+      "name": "Main",
+      "metrics": {
+        "loc": 240,
+        "cc": 12,
+        "mi": 65,
+        "max_cc": 12,
+        "median_cc": 4.0,
+        "mi_min": 42.5,
+        "mi_median": 68.3,
+        "functions": [
+          { "name": "_ready", "line": 5, "cc": 2, "loc": 15, "mi": 95.2 },
+          { "name": "_process", "line": 21, "cc": 12, "loc": 85, "mi": 42.5 },
+          { "name": "spawn_enemies", "line": 107, "cc": 6, "loc": 45, "mi": 68.3 },
+          { "name": "update_score", "line": 153, "cc": 3, "loc": 20, "mi": 88.1 }
+        ]
+      },
+      "tags": ["entry-point", "autoload"]
+    },
+    {
+      "id": "res://src/player/player.gd",
+      "kind": "script",
+      "language": "gdscript",
+      "name": "Player",
+      "metrics": {
+        "loc": 180,
+        "cc": 9,
+        "mi": 72,
+        "max_cc": 9,
+        "median_cc": 3.5,
+        "mi_min": 55.0,
+        "mi_median": 78.4,
+        "functions": [
+          { "name": "_physics_process", "line": 10, "cc": 9, "loc": 60, "mi": 55.0 },
+          { "name": "take_damage", "line": 71, "cc": 4, "loc": 25, "mi": 78.4 },
+          { "name": "shoot", "line": 97, "cc": 1, "loc": 12, "mi": 113.2 }
+        ]
+      },
+      "tags": ["character"]
+    },
+    {
+      "id": "res://src/player/player.tscn",
+      "kind": "scene",
+      "language": "gdscript",
+      "name": "PlayerScene",
+      "metrics": {
+        "loc": null,
+        "cc": null,
+        "mi": null,
+        "max_cc": null,
+        "median_cc": null,
+        "mi_min": null,
+        "mi_median": null,
+        "functions": []
+      },
+      "tags": ["scene"]
+    },
+    {
+      "id": "res://src/enemies/enemy_base.gd",
+      "kind": "script",
+      "language": "gdscript",
+      "name": "EnemyBase",
+      "metrics": {
+        "loc": 320,
+        "cc": 18,
+        "mi": 48,
+        "max_cc": 18,
+        "median_cc": 7.0,
+        "mi_min": 31.8,
+        "mi_median": 52.1,
+        "functions": [
+          { "name": "_ready", "line": 8, "cc": 3, "loc": 20, "mi": 89.5 },
+          { "name": "take_damage", "line": 29, "cc": 18, "loc": 95, "mi": 31.8 },
+          { "name": "update_ai", "line": 125, "cc": 10, "loc": 70, "mi": 52.1 },
+          { "name": "die", "line": 196, "cc": 2, "loc": 30, "mi": 101.3 }
+        ]
+      },
+      "tags": ["character", "abstract"]
+    },
+    {
+      "id": "res://src/enemies/goblin.gd",
+      "kind": "script",
+      "language": "gdscript",
+      "name": "Goblin",
+      "metrics": { "loc": 95, "cc": 5, "mi": 80 },
+      "tags": ["character"]
+    },
+    {
+      "id": "res://src/ui/hud.gd",
+      "kind": "script",
+      "language": "gdscript",
+      "name": "HUD",
+      "metrics": { "loc": 110, "cc": 4, "mi": null },
+      "tags": ["ui"]
+    },
+    {
+      "id": "res://assets/sprites/spritesheet.tres",
+      "kind": "resource",
+      "language": "gdscript",
+      "name": "Spritesheet",
+      "metrics": { "loc": null, "cc": null, "mi": null },
+      "tags": ["asset"]
+    }
+  ],
+  "links": [
+    {
+      "source": "res://src/enemies/goblin.gd",
+      "target": "res://src/enemies/enemy_base.gd",
+      "kind": "extends",
+      "weight": 1,
+      "evidence": [
+        { "file": "src/enemies/goblin.gd", "line": 1 }
+      ]
+    },
+    {
+      "source": "res://src/player/player.tscn",
+      "target": "res://src/player/player.gd",
+      "kind": "preload",
+      "weight": 1,
+      "evidence": [
+        { "file": "src/player/player.tscn", "line": 5 }
+      ]
+    },
+    {
+      "source": "res://src/main.gd",
+      "target": "res://src/player/player.tscn",
+      "kind": "preload",
+      "weight": 2,
+      "evidence": [
+        { "file": "src/main.gd", "line": 3 },
+        { "file": "src/main.gd", "line": 12 }
+      ]
+    },
+    {
+      "source": "res://src/main.gd",
+      "target": "res://src/enemies/enemy_base.gd",
+      "kind": "calls",
+      "weight": 5,
+      "evidence": [
+        { "file": "src/main.gd", "line": 45 },
+        { "file": "src/main.gd", "line": 78 },
+        { "file": "src/main.gd", "line": 102 }
+      ]
+    },
+    {
+      "source": "res://src/player/player.gd",
+      "target": "res://src/enemies/enemy_base.gd",
+      "kind": "calls",
+      "weight": 3,
+      "evidence": [
+        { "file": "src/player/player.gd", "line": 67 },
+        { "file": "src/player/player.gd", "line": 89 }
+      ]
+    },
+    {
+      "source": "res://src/enemies/enemy_base.gd",
+      "target": "res://src/main.gd",
+      "kind": "signal",
+      "weight": 2,
+      "evidence": [
+        { "file": "src/enemies/enemy_base.gd", "line": 15 },
+        { "file": "src/enemies/enemy_base.gd", "line": 22 }
+      ]
+    },
+    {
+      "source": "res://src/player/player.gd",
+      "target": "res://src/ui/hud.gd",
+      "kind": "signal",
+      "weight": 4,
+      "evidence": [
+        { "file": "src/player/player.gd", "line": 30 },
+        { "file": "src/player/player.gd", "line": 55 }
+      ]
+    },
+    {
+      "source": "res://src/ui/hud.gd",
+      "target": "res://assets/sprites/spritesheet.tres",
+      "kind": "preload",
+      "weight": 1,
+      "evidence": [
+        { "file": "src/ui/hud.gd", "line": 2 }
+      ]
+    },
+    {
+      "source": "res://src/main.gd",
+      "target": "res://src/ui/hud.gd",
+      "kind": "calls",
+      "weight": 2,
+      "evidence": [
+        { "file": "src/main.gd", "line": 150 },
+        { "file": "src/main.gd", "line": 175 }
+      ]
+    },
+    {
+      "source": "res://src/enemies/goblin.gd",
+      "target": "res://assets/sprites/spritesheet.tres",
+      "kind": "preload",
+      "weight": 1,
+      "evidence": [
+        { "file": "src/enemies/goblin.gd", "line": 3 }
+      ]
+    }
+  ]
+}
